@@ -1,0 +1,142 @@
+/* カスタムスタイル - コンパクト版 */
+.calendar-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3px;
+    margin: 8px 0;
+}
+
+.calendar-month-compact {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 3px;
+    padding: 4px 2px;
+    text-align: center;
+    min-height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-month-compact.available {
+    background-color: #28a745;
+    color: white;
+}
+
+.calendar-month-compact.optimal {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.calendar-month-compact.unavailable {
+    background-color: #dc3545;
+    color: white;
+}
+
+.month-number {
+    font-weight: bold;
+    font-size: 0.85em;
+    margin-bottom: 1px;
+}
+
+.month-label {
+    font-size: 0.65em;
+    margin-bottom: 1px;
+}
+
+.legend-compact {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.legend-item-compact {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    border: 1px solid #dee2e6;
+}
+
+.legend-color.available {
+    background-color: #28a745;
+}
+
+.legend-color.optimal {
+    background-color: #ffc107;
+}
+
+.legend-color.unavailable {
+    background-color: #dc3545;
+}
+
+.result-card {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-size: 0.85em;
+}
+
+.result-card.success {
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+    color: #155724;
+}
+
+.result-card.danger {
+    background-color: #f8d7da;
+    border-left: 4px solid #dc3545;
+    color: #721c24;
+}
+
+.result-card.info {
+    background-color: #d1ecf1;
+    border-left: 4px solid #17a2b8;
+    color: #0c5460;
+}
+
+.reason-item {
+    margin-bottom: 4px;
+    font-size: 0.8em;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .calendar-grid-compact {
+        gap: 2px;
+    }
+    
+    .calendar-month-compact {
+        padding: 3px 1px;
+        min-height: 35px;
+    }
+    
+    .month-number {
+        font-size: 0.75em;
+    }
+    
+    .month-label {
+        font-size: 0.55em;
+    }
+    
+    .legend-compact {
+        gap: 8px;
+    }
+    
+    .legend-color {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .calendar-grid-compact {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}

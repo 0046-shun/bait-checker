@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ベイト販売基準チェッカー</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid py-2">
+        <h1 class="h4 text-center mb-2">ベイト販売基準チェッカー</h1>
+        
+        <!-- 入力フォーム -->
+        <div class="card mb-2">
+            <div class="card-body py-2">
+                <form id="baitForm">
+                    <div class="row g-2">
+                        <div class="col-md-4">
+                            <label for="previousBaitMonth" class="form-label small mb-1">前回ベイト月 *</label>
+                            <select class="form-select form-select-sm" id="previousBaitMonth" required>
+                                <option value="">選択してください</option>
+                                <option value="1">1月</option>
+                                <option value="2">2月</option>
+                                <option value="3">3月</option>
+                                <option value="4">4月</option>
+                                <option value="5">5月</option>
+                                <option value="6">6月</option>
+                                <option value="7">7月</option>
+                                <option value="8">8月</option>
+                                <option value="9">9月</option>
+                                <option value="10">10月</option>
+                                <option value="11">11月</option>
+                                <option value="12">12月</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inspectionMonth" class="form-label small mb-1">点検月 *</label>
+                            <select class="form-select form-select-sm" id="inspectionMonth" required>
+                                <option value="">選択してください</option>
+                                <option value="1">1月</option>
+                                <option value="2">2月</option>
+                                <option value="3">3月</option>
+                                <option value="4">4月</option>
+                                <option value="5">5月</option>
+                                <option value="6">6月</option>
+                                <option value="7">7月</option>
+                                <option value="8">8月</option>
+                                <option value="9">9月</option>
+                                <option value="10">10月</option>
+                                <option value="11">11月</option>
+                                <option value="12">12月</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="simultaneousContract" class="form-label small mb-1">同時契約</label>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" id="simultaneousContract">
+                                <label class="form-check-label small" for="simultaneousContract">
+                                    ベイトと消毒を同時契約
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button type="submit" class="btn btn-primary btn-sm">判定実行</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- 判定結果と詳細理由を横並びで表示 -->
+        <div id="resultSection" class="row g-2 mb-2">
+            <div class="col-md-6">
+                <div id="judgmentResult">
+                    <div class="result-card info">
+                        <h6 class="mb-2">判定結果</h6>
+                        <p class="mb-1">入力値を設定して「判定実行」ボタンを押してください</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="detailedReason">
+                    <div class="result-card info">
+                        <h6 class="mb-2">詳細判定理由</h6>
+                        <p class="mb-1">判定実行後に詳細が表示されます</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 月別施工可否カレンダー -->
+        <div id="calendarSection" class="card">
+            <div class="card-body py-2">
+                <h6 class="card-title mb-2">月別施工可否</h6>
+                <div id="calendarGrid" class="calendar-grid-compact"></div>
+                <div class="legend-compact mt-2">
+                    <div class="legend-item-compact">
+                        <span class="legend-color available"></span>
+                        <span class="small">施工可能</span>
+                    </div>
+                    <div class="legend-item-compact">
+                        <span class="legend-color optimal"></span>
+                        <span class="small">最適</span>
+                    </div>
+                    <div class="legend-item-compact">
+                        <span class="legend-color unavailable"></span>
+                        <span class="small">不可</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

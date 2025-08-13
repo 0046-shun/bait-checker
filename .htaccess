@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.html [QSA,L]
+
+# MIME type for CSS files
+AddType text/css .css
+
+# MIME type for JavaScript files
+AddType application/javascript .js
